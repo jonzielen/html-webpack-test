@@ -9,13 +9,20 @@ const config = [{
   },
   module: {
     rules: [{
-      test: /\.html$/,
-      loader: 'html-loader'
+      test: /\.html$/
     }]
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: 'src/html/index.html'
-  })]
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'My App',
+      template: 'src/html/index.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        useShortDoctype: true
+      }
+    })
+  ]
 }];
 
 module.exports = config;
