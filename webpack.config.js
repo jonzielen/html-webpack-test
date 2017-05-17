@@ -9,10 +9,13 @@ const config = [{
   },
   module: {
     rules: [{
-      test: /\.html$/
+      test: /\.html$/,
+      loader: 'html-loader'
     }]
   },
-  plugins: [new HtmlWebpackPlugin()]
+  plugins: [new HtmlWebpackPlugin({
+    template: 'src/html/index.html'
+  })]
 }];
 
 module.exports = config;
